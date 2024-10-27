@@ -11,6 +11,7 @@ body {
     align-items: center;
     background-color: #1d1f21;
     color: #f0f0f0;
+    overflow-x: hidden; /* Prevent unwanted horizontal scroll */
 }
 
 header {
@@ -25,10 +26,12 @@ h1 {
 
 .song-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Default: 5-6 items per row */
-    gap: 15px;
-    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible columns */
+    gap: 10px;
+    width: 100%;
     max-width: 1200px;
+    padding: 0 10px; /* Add padding to avoid cutoffs */
+    overflow-x: auto; /* Enable horizontal scroll if necessary */
     margin: 0 auto;
 }
 
@@ -61,7 +64,7 @@ h1 {
 /* Large screens (desktops) */
 @media (min-width: 1024px) {
     .song-list {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(6, 1fr); /* 6 items per row on larger screens */
     }
 }
 
@@ -71,7 +74,7 @@ h1 {
         font-size: 2em;
     }
     .song-list {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* 3-4 items per row */
+        grid-template-columns: repeat(4, 1fr); /* 3-4 items per row */
     }
 }
 
@@ -81,7 +84,7 @@ h1 {
         font-size: 1.8em;
     }
     .song-list {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 3-4 items per row */
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
     }
     .song-item {
         padding: 8px;
