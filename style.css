@@ -48,7 +48,9 @@ h1 {
 }
 
 .song-image {
-    width: 100%;
+    width: 100%; /* Full width of the container */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio, cover the area */
     border-radius: 8px;
     margin-bottom: 8px;
     cursor: pointer;
